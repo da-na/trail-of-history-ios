@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class StatueAnnotationView: MKAnnotationView {
+class StatueAnnotationView: MKPinAnnotationView {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -21,5 +21,8 @@ class StatueAnnotationView: MKAnnotationView {
 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        pinTintColor = MKPinAnnotationView.purplePinColor()
+        canShowCallout = true
+        rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
     }
 }

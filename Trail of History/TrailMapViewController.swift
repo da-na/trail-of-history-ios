@@ -70,6 +70,10 @@ class TrailMapViewController: UIViewController, MKMapViewDelegate {
         return MKOverlayRenderer()
     }
 
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        return StatueAnnotationView(annotation: annotation, reuseIdentifier: "Statue")
+    }
+
     // MARK: Helper functions
     func loadSelectedOptions() {
         mapView.removeAnnotations(mapView.annotations)
